@@ -1,6 +1,6 @@
 ## LaserWorp
 
 Space shooter made with OpenGL.  
-Requires https://github.com/crapola/libutils.
+Building requires SDL2, GLEW and GLM.
 
 ![Screenshot](screenshot.png)

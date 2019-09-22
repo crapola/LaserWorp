@@ -467,7 +467,7 @@ void App::MenuTitleUpdate()
 	if (_keyboard_state[SDL_SCANCODE_SPACE])
 	{
 		_game.Start();
-		audio::Beep(698); // 698 Hz=CPC beep.
+		//audio::Beep(698); // 698 Hz=CPC beep.
 		MenuTitleExit();
 	}
 }

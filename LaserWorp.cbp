@@ -4,33 +4,39 @@
 	<Project>
 		<Option title="LaserWorp" />
 		<Option pch_mode="2" />
-		<Option compiler="mingw64_gcc" />
+		<Option compiler="gcc" />
+		<MakeCommands>
+			<Build command="" />
+			<CompileFile command="" />
+			<Clean command="" />
+			<DistClean command="" />
+			<AskRebuildNeeded command="" />
+			<SilentBuild command=" &gt; $(CMD_NULL)" />
+		</MakeCommands>
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/LaserWorp" prefix_auto="1" extension_auto="1" />
 				<Option object_output="bin/obj/Debug/" />
 				<Option type="1" />
-				<Option compiler="mingw64_gcc" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="utils_d" />
 					<Add library="mingw32" />
 					<Add library="sdl2main" />
 					<Add library="sdl2" />
 					<Add library="glew32" />
 					<Add library="opengl32" />
-					<Add directory="D:/Users/Utilisateur/Programmation/cpp/libutils/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release_Static">
 				<Option output="bin/Release/LaserWorp" prefix_auto="1" extension_auto="1" />
 				<Option object_output="bin/obj/Release/" />
 				<Option type="1" />
-				<Option compiler="mingw64_gcc" />
+				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-O3" />
 					<Add option="-DNDEBUG" />
 				</Compiler>
 				<Linker>
@@ -38,7 +44,6 @@
 					<Add option="-static-libstdc++" />
 					<Add option="-static-libgcc" />
 					<Add option="-static" />
-					<Add library="utils" />
 					<Add library="mingw32" />
 					<Add library="sdl2main" />
 					<Add library="sdl2" />
@@ -50,17 +55,52 @@
 					<Add library="oleaut32" />
 					<Add library="gdi32" />
 					<Add library="winmm" />
-					<Add directory="D:/Users/Utilisateur/Programmation/cpp/libutils/lib" />
+					<Add library="setupapi" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-Wall" />
 			<Add option="-DGLEW_STATIC" />
-			<Add directory="D:/Users/Utilisateur/Programmation/cpp/libutils/include" />
+			<Add directory="$(#sdl2.INCLUDE)" />
+			<Add directory="libutils/include" />
+			<Add directory="F:/Libraries/GLEW/glew-2.0.0/include" />
+			<Add directory="F:/Libraries/glm-0.9.8.4" />
 		</Compiler>
+		<Linker>
+			<Add directory="$(#sdl2.LIB)" />
+			<Add directory="F:/Libraries/GLEW/glew-2.0.0/lib" />
+		</Linker>
 		<Unit filename="data/fragment.glsl" />
 		<Unit filename="data/vertex.glsl" />
+		<Unit filename="libutils/include/gfx/context.h" />
+		<Unit filename="libutils/include/gfx/window.h" />
+		<Unit filename="libutils/include/gl/buffer.h" />
+		<Unit filename="libutils/include/gl/debug.h" />
+		<Unit filename="libutils/include/gl/logerrors.h" />
+		<Unit filename="libutils/include/gl/program.h" />
+		<Unit filename="libutils/include/gl/shader.h" />
+		<Unit filename="libutils/include/gl/texture.h" />
+		<Unit filename="libutils/include/gl/vao.h" />
+		<Unit filename="libutils/include/misc/backcache.hpp" />
+		<Unit filename="libutils/include/misc/loadstring.h" />
+		<Unit filename="libutils/include/smalltext/smalltext.h" />
+		<Unit filename="libutils/src/gfx/context.cpp" />
+		<Unit filename="libutils/src/gfx/window.cpp" />
+		<Unit filename="libutils/src/gl/buffer.cpp" />
+		<Unit filename="libutils/src/gl/debug.cpp" />
+		<Unit filename="libutils/src/gl/glid.hpp" />
+		<Unit filename="libutils/src/gl/logerrors.cpp" />
+		<Unit filename="libutils/src/gl/program.cpp" />
+		<Unit filename="libutils/src/gl/shader.cpp" />
+		<Unit filename="libutils/src/gl/texture.cpp" />
+		<Unit filename="libutils/src/gl/vao.cpp" />
+		<Unit filename="libutils/src/misc/loadstring.cpp" />
+		<Unit filename="libutils/src/smalltext/cpcfont.h" />
+		<Unit filename="libutils/src/smalltext/smalltext.cpp" />
+		<Unit filename="libutils/src/smalltext/smalltextrenderer.cpp" />
+		<Unit filename="libutils/src/smalltext/smalltextrenderer.h" />
+		<Unit filename="libutils/src/smalltext/smalltextrenderer_shaders.h" />
+		<Unit filename="libutils/src/smalltext/smalltextrenderer_types.h" />
 		<Unit filename="src/app.cpp" />
 		<Unit filename="src/app.h" />
 		<Unit filename="src/app_strings.h" />
