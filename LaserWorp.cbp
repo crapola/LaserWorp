@@ -62,13 +62,13 @@
 		<Compiler>
 			<Add option="-DGLEW_STATIC" />
 			<Add directory="$(#sdl2.INCLUDE)" />
+			<Add directory="$(#glew.INCLUDE)" />
+			<Add directory="$(#glm.INCLUDE)" />
 			<Add directory="libutils/include" />
-			<Add directory="F:/Libraries/GLEW/glew-2.0.0/include" />
-			<Add directory="F:/Libraries/glm-0.9.8.4" />
 		</Compiler>
 		<Linker>
 			<Add directory="$(#sdl2.LIB)" />
-			<Add directory="F:/Libraries/GLEW/glew-2.0.0/lib" />
+			<Add directory="$(#glew.LIB)" />
 		</Linker>
 		<Unit filename="data/fragment.glsl" />
 		<Unit filename="data/vertex.glsl" />
@@ -117,9 +117,6 @@
 		<Unit filename="src/particles.cpp" />
 		<Unit filename="src/particles.h" />
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
