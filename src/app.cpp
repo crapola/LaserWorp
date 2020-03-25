@@ -541,7 +541,7 @@ void App::UpdateMatrices(float p)
 {
 	for (size_t i=0; i<_objects_count+_particles_count; ++i)
 	{
-		Matrix m;
+		Matrix m(1.0f); // Identity matrix.
 		Point pos=glm::mix(_frame_old.positions[i],_frame_new.positions[i],p);
 		//Point scale=glm::mix(_scales_old[i],_scales_new[i],p);
 		Point scale=_frame_new.scales[i];
@@ -554,7 +554,7 @@ void App::UpdateMatricesNoLerp()
 {
 	for (size_t i=0; i<_objects_count+_particles_count; ++i)
 	{
-		Matrix m;
+		Matrix m(1.0f);
 		m=glm::translate(m,_frame_new.positions[i]);
 		m=glm::scale(m,_frame_new.scales[i]);
 		_matrices[i]=m;
